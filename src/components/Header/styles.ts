@@ -12,7 +12,6 @@ export const Imagem = styled.div`
 `
 
 export const Logo = styled.img`
-    display: block;
     max-width: 100%;
     height: auto;
 `
