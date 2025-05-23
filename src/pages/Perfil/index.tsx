@@ -1,7 +1,14 @@
+import FoodList from "../../components/FoodList"
+import Footer from "../../components/Footer"
+import HeaderBanner from "../../components/HeaderBanner"
+
+
 const Perfil = () =>(
-    <div>
-        oi
-    </div>
+    <>
+    <HeaderBanner />
+    <FoodList />
+    <Footer />
+    </>
 )
 
 export default Perfil
