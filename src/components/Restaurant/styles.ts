@@ -4,7 +4,6 @@ import { cores } from "../../styles";
 
 export const ContainerRest = styled.div`
     width: 472px;
-    width: 100%;
     height: auto;
     border: 1px solid ${cores.rose};
     background-color: ${cores.branca};
@@ -12,18 +11,27 @@ export const ContainerRest = styled.div`
     margin-bottom: 48px;
     position: relative;
 
+    img{
+        width: 100%;
+        height: 217px;
+        object-fit: cover;
+    }
+
     div{
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         h3{
-            margin-left: 8px;
+            margin-top: 8px;
             margin-bottom: 16px;
+            margin-left: 8px
         }
 
         span{
             font-weight: bold;
+            margin-top: 8px;
+            margin-bottom: 16px;
         }
         
         img{
@@ -47,6 +55,8 @@ export const Description = styled.p`
 export const Infos = styled.div`
     display: flex;
     position: absolute;
+    text-align: center;
     top: 16px;
     right: 16px;
 `
+

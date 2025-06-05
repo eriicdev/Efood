@@ -1,9 +1,10 @@
-import { ContainerRest, Description, Infos } from './styles'
+import { ContainerRest, Description, Infos,  } from './styles'
 import estrelaImg from '../../assets/estrela.png'
 import Tag from '../Tag';
 import { Link } from 'react-router-dom';
 
 type Props = {
+    id: number
     title: string;
     image: string;
     description: string;
@@ -16,7 +17,8 @@ const Restaurant = ({
     image, 
     title, 
     classification, 
-    infos 
+    infos, 
+    id
 }: Props) => (
     <ContainerRest>
         <img src={image} alt={title}/>
@@ -29,7 +31,7 @@ const Restaurant = ({
             <span>{classification}<img src={estrelaImg}/></span>
         </div>
         <Description>{description}</Description>
-        <Link to="/perfil">
+        <Link to={`/perfil/${id}`}>
             <Tag children={'Saiba mais'} size='small'></Tag>
         </Link>
     </ContainerRest>

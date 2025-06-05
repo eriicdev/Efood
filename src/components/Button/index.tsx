@@ -1,7 +1,11 @@
 import { Botao } from './styles'
 
-const Button = () => (
-    <Botao />
+type ButtonProps = {
+    children: React.ReactNode
+}
+
+const Button = ({ children }: ButtonProps) => (
+    <Botao>{children}</Botao>
 )
 
 export default Button

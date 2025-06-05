@@ -7,7 +7,13 @@ import {Imagem, Text, Banner, TextBanner, RestaurantName} from './styles'
 import { Container } from '../../styles'
 import { Link } from 'react-router-dom'
 
-const HeaderBanner = () => (
+type Props = {
+    tipo: string
+    titulo: string
+    capa: string
+}
+
+const HeaderBanner = ({ capa, tipo, titulo }: Props) => (
     <>
     <Imagem style={{ backgroundImage: `url(${fundoImg})` }}>
         <Text>Restaurantes</Text>
@@ -16,10 +22,10 @@ const HeaderBanner = () => (
         </Link>
         <Text>0 produto(s) no carrinho</Text>
     </Imagem>
-    <Banner style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${banner})`}}>
+    <Banner style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${capa})`}}>
         <Container>
-            <TextBanner>Italiana</TextBanner>
-            <RestaurantName>La Dolce Vita Trattoria</RestaurantName>
+            <TextBanner>{tipo}</TextBanner>
+            <RestaurantName>{titulo}</RestaurantName>
         </Container>
     </Banner>
     </>

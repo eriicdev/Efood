@@ -5,6 +5,8 @@ export const ContainerFood = styled.div`
     max-width: 320px;
     width: 100%;
     background-color: ${cores.rose};
+    cursor: pointer;
+    height: 338px;
 
     div{
         padding: 8px;
@@ -14,7 +16,10 @@ export const ContainerFood = styled.div`
 export const ImagemFood = styled.img`
     display: block;
     margin: 0 auto;
-    padding-top: 8px;
+    width: 100%;
+    height: 167px;
+    object-fit: cover;
+    padding: 8px;
 `
 
 export const TitleFood = styled.h4`
