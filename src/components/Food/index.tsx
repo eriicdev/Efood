@@ -11,7 +11,7 @@ type FoodProps = {
     porcao: string
 };
 
-const Food = ({ onClick, foto, descricao, nome, porcao, preco }: FoodProps) => {
+const Food = ({ onClick, foto, descricao, nome, preco }: FoodProps) => {
     const limitarDescricao = (descricao: string) => {
         return descricao.length > 150 ? descricao.slice(0, 150) + '...' : descricao
     }

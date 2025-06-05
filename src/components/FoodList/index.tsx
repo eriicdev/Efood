@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { CardapioItem, Restaurants } from '../../pages/Home'
+import type { CardapioItem } from '../../pages/Home'
 
 import { List } from './styles'
 import { Container } from "../../styles"
@@ -7,7 +7,6 @@ import { ModalContent, Modal, ModalButton, Description, BotaoFechar, ImageModal,
 
 import Food from '../Food'
 
-import Pizzaimg from '../../assets/Pizza.png'
 import Fechar from '../../assets/fechar.png'
 
 type Props = {

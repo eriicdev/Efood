@@ -1,6 +1,5 @@
 import fundoImg from '../../assets/Fundo.png'
 import logo from '../../assets/logo.svg'
-import banner from '../../assets/Banner.png'
 
 
 import {Imagem, Text, Banner, TextBanner, RestaurantName} from './styles'
