@@ -5,7 +5,7 @@ import FoodList from "../../components/FoodList"
 import Footer from "../../components/Footer"
 import HeaderBanner from "../../components/HeaderBanner"
 
-import type { Restaurants } from '../../pages/Home'
+import type { CardapioItem, Restaurants } from '../../pages/Home'
 
 const Perfil = () => {
         const [restaurante, setRestaurante] = useState<Restaurants | null>(null)
@@ -14,7 +14,16 @@ const Perfil = () => {
     useEffect(() => {
         fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
             .then(resposta => resposta.json())
-            .then(resposta => setRestaurante(resposta))
+            .then(resposta => {
+                const cardapioCorrigido: CardapioItem[] = resposta.cardapio.map((item: any) => ({
+                    ...item,
+                    preco: Number(item.preco)
+                }))
+                setRestaurante({
+                    ...resposta,
+                    cardapio: cardapioCorrigido
+                } as Restaurants)
+            })
         }, [id])
 
     return(

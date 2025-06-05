@@ -23,17 +23,7 @@ export type Restaurants = {
     avaliacao: string
     descricao: string
     capa: string
-
-    cardapio: [
-    {
-        foto: string
-        preco: string
-        id: number
-        nome: string
-        descricao: string
-        porcao: string
-    }
-]
+    cardapio: CardapioItem[]
 }
 
 const Home = () => {

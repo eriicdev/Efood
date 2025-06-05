@@ -1,12 +1,13 @@
 import { ContainerFood, ImagemFood, TitleFood, DescriptionFood } from './styles'
 import { Botao } from '../Button/styles'
+import { formataPreco } from '../FoodList';
 
 type FoodProps = {
     onClick: () => void;
     foto: string
     nome: string
     descricao: string
-    preco: string
+    preco: number
     porcao: string
 };
 
@@ -21,7 +22,7 @@ const Food = ({ onClick, foto, descricao, nome, porcao, preco }: FoodProps) => {
         <div onClick={onClick}>
             <TitleFood>{nome}</TitleFood>
             <DescriptionFood>{limitarDescricao(descricao)}</DescriptionFood>
-            <Botao>Adicionar ao carrinho</Botao>
+            <Botao>Adicionar ao carrinho - R$ {formataPreco(preco)}</Botao>
         </div>
     </ContainerFood>
     )

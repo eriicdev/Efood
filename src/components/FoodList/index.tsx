@@ -14,15 +14,15 @@ type Props = {
     foods: CardapioItem[]
 }
 
+export const formataPreco = (preco: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    }).format(preco)
+}
 const FoodList = ({ foods } : Props) => {
     const [pratoSelecionado, setPratoSelecionado] = useState<CardapioItem | null>(null)
 
-    const formataPreco = (preco: number) => {
-        return new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        }).format(preco)
-    }
     
     return (
         <Container>
@@ -34,7 +34,7 @@ const FoodList = ({ foods } : Props) => {
                         foto={item.foto} 
                         nome={`${item.nome}`} 
                         descricao={`${item.descricao}`} 
-                        preco={formataPreco(item.preco)}
+                        preco={item.preco}
                         porcao={`${item.porcao}`}                
                     />
                 ))}
