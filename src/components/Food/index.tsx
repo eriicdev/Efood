@@ -1,6 +1,9 @@
+import { useDispatch } from 'react-redux';
+
 import { ContainerFood, ImagemFood, TitleFood, DescriptionFood } from './styles'
 import { Botao } from '../Button/styles'
 import { formataPreco } from '../FoodList';
+
 
 type FoodProps = {
     onClick: () => void;
@@ -11,11 +14,15 @@ type FoodProps = {
     porcao: string
 };
 
+
+
 const Food = ({ onClick, foto, descricao, nome, preco }: FoodProps) => {
+
     const limitarDescricao = (descricao: string) => {
         return descricao.length > 150 ? descricao.slice(0, 150) + '...' : descricao
     }
-    
+
+
     return (
     <ContainerFood>
         <ImagemFood src={foto} />

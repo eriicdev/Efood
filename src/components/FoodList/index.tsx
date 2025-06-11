@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import type { CardapioItem } from '../../pages/Home'
 
 import { List } from './styles'
@@ -6,8 +7,9 @@ import { Container } from "../../styles"
 import { ModalContent, Modal, ModalButton, Description, BotaoFechar, ImageModal, Title } from './styles'
 
 import Food from '../Food'
-
 import Fechar from '../../assets/fechar.png'
+
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
     foods: CardapioItem[]
@@ -21,8 +23,16 @@ export const formataPreco = (preco: number) => {
 }
 const FoodList = ({ foods } : Props) => {
     const [pratoSelecionado, setPratoSelecionado] = useState<CardapioItem | null>(null)
+    const dispatch = useDispatch()
 
-    
+    const handleAddToCart = () => {
+        if (pratoSelecionado) {
+            dispatch(add(pratoSelecionado))
+            dispatch(open())
+            setPratoSelecionado(null)
+        }
+    }
+
     return (
         <Container>
             <List>
@@ -55,7 +65,9 @@ const FoodList = ({ foods } : Props) => {
                             {pratoSelecionado.porcao}
                         </span>
                         </Description>
-                        <ModalButton>Adicionar ao carrinho - R$ {formataPreco(pratoSelecionado.preco)}</ModalButton>
+                        <ModalButton onClick={handleAddToCart}>
+                            Adicionar ao carrinho - R$ {formataPreco(pratoSelecionado.preco)}
+                        </ModalButton>
                     </div>
                 </ModalContent>         
                 )}
