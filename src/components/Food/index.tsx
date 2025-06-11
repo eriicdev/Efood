@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 
 import { ContainerFood, ImagemFood, TitleFood, DescriptionFood } from './styles'
 import { Botao } from '../Button/styles'

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { type CardapioItem, type Restaurants } from '../../pages/Home'
+import { type CardapioItem } from '../../pages/Home'
 
 type CartItem = CardapioItem & { quantidade: number}
 
