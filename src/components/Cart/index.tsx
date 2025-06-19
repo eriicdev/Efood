@@ -7,6 +7,7 @@ import { formataPreco } from "../../models/formataPreco";
 // importação de imagem
 import lixeira from "../../assets/lixeira.svg";
 import Order from "../Order";
+import { CardapioIten } from "../../models/Cardapio";
 const CartSection = () => {
   // pega o state do carrinho
   const { isOpen, itens, isOrder } = useSelector(
@@ -35,7 +36,7 @@ const CartSection = () => {
         <Order />
       ) : (
         <S.CartContainer>
-          {itens.map((iten) => (
+          {itens.map((iten: CardapioIten) => (
             <S.CartContent key={iten.id}>
               <S.ImageContainer>
                 <img src={iten.foto} alt={iten.nome} />
@@ -55,7 +56,7 @@ const CartSection = () => {
             <p>valor total:</p>
             <p>
               {formataPreco(
-                itens.reduce((total, item) => total + item.preco, 0),
+                itens.reduce((total: number, item) => total + item.preco, 0),
               )}
             </p>
           </S.CartBuy>
