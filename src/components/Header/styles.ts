@@ -1,27 +1,38 @@
+// Importação de biblioteca externa 
 import styled from "styled-components";
-import { cores } from '../../styles'
+// Importação das cores da aplicação
+import { cores } from "../../globalStyles";
 
-export const Imagem = styled.div`
-    width: 100%;
-    height: 384px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-`
-
-export const Logo = styled.img`
-    max-width: 100%;
-    height: auto;
-`
-
-export const TextHeader = styled.p`
+export const HeaderContainer = styled.div`
+    height: 380px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover; 
     font-weight: bold;
-    font-size: 36px;
-    line-height: 100%;
-    color: ${cores.rose};
-    margin-top: 138px;
-    max-width: 550px;
+
+    @media (max-width: 768px) {
+        height: 300px;
+    }
+    
+`
+export const Logo = styled.div`
     text-align: center;
+    padding-top: 60px;
+
+    @media (max-width: 768px) {
+        padding-top: 40px;
+    }
+    
+`
+export const Titulo = styled.h2`
+    text-align: center;
+    color: ${cores.laranja};
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 138px;
+
+    @media (max-width: 768px) {
+        margin-top: 80px;
+        font-size: 24px;
+    }
 `

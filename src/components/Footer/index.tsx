@@ -1,36 +1,24 @@
-import { ContainerFooter, Logo, ListLogos, TextFooter } from './styles'
+// importação dos estilos do componente
+import * as S from './styles'
+// Importação de imagens 
+import logo from '../../assets/logo.png'
+import Facbook from '../../assets/facebook.svg'
+import Instagram from '../../assets/instagram.svg'
+import x from '../../assets/x.svg'
+// COrreção do nome do arquivo
 
-import logo from '../../assets/logo.svg'
-import instagramLogo from '../../assets/instagram.svg'
-import twitterLogo from '../../assets/twitter.svg'
-import facebookLogo from '../../assets/facebook.svg'
-
-
-
-const Footer = () => (
-    <ContainerFooter>
-        <Logo src={logo}  alt='Efood'/>
-        <ListLogos>
-            <li>
-                <a href="#">
-                    <img src={instagramLogo} alt="Instagram" />
-                </a>
-            </li>
-            <li id='twitter'>
-                <a href="#">
-                    <img src={twitterLogo} alt="Instagram" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src={facebookLogo} alt="Instagram" />
-                </a>
-            </li>
-        </ListLogos>
-        <TextFooter>
-            A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.
-        </TextFooter>
-    </ContainerFooter>
-)
-
-export default Footer
+export default function Footer() {
+    return (
+        <S.FooterContainer>
+            <img src={logo} alt="Logo da Efood" />
+            <S.FooterLogo>
+                <img src={Instagram} alt="Logo do Facbook" />
+                <img src={Facbook} alt="Logo do Instagram" />
+                <img src={x} alt="Logo do X" />
+            </S.FooterLogo>
+            <S.FooterText>
+                A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade <br />dos produtos é toda do estabelecimento contratado. 
+            </S.FooterText>
+        </S.FooterContainer>
+    )
+}   

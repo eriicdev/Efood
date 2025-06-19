@@ -1,29 +1,20 @@
-import { Provider } from 'react-redux'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+// Importação de Bibliotecas externas
+import {  RouterProvider } from "react-router-dom"
 
-import { GlobalCss } from './styles'
-import Home from './pages/Home'
-import Perfil from './pages/Perfil'
-import { store } from './store'
-import Cart from './components/Cart'
+// Importação dos estilos globais da pagina 
+import { GlobalStyles } from "./globalStyles"
 
-const rotas = createBrowserRouter ([
-  {
-    path: '/',
-    element: <Home/>
-  },
-  {
-    path: '/perfil/:id',
-    element: <Perfil />
-  }
-])
+// Importação das rotas do sistema 
+import router from "./pages/routes"
+import { Provider } from "react-redux"
+import store from "./store"
 
 function App() {
+
   return (
     <Provider store={store}>
-      <GlobalCss />
-      <RouterProvider router={rotas} />
-      <Cart />
+      <GlobalStyles />
+      <RouterProvider router={router} />
     </Provider>
   )
 }

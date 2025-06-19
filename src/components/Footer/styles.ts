@@ -1,34 +1,24 @@
+// Importação de bibliotecas externas
 import styled from "styled-components";
-import { cores } from "../../styles";
+// Importação das cores da aplicação
+import { cores } from "../../globalStyles";
 
-export const ContainerFooter = styled.section`
+export const FooterContainer = styled.footer`
     background-color: ${cores.bege};
+    text-align: center;
+    padding: 40px 0;
 `
-
-export const Logo = styled.img`
-    display: block;
-    margin: 0 auto;
-    padding-top: 40px;
-`
-
-export const ListLogos = styled.ul`
-    display: flex;
-    list-style: none;
-    justify-content: center;
+export const FooterLogo = styled.div`
     padding-top: 32px;
+    margin-left: 8px;
 
-    #twitter{
-        margin: 0 8px;
+    img {
+       margin-right: 8px
     }
 `
-
-export const TextFooter = styled.p`
-    color: ${cores.rose};
+export const FooterText = styled.p`
+    margin-top: 80px;
+    color: ${cores.laranja};
     font-size: 10px;
-    width: 480px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 40px;
+    line-height: 11px;
 `
