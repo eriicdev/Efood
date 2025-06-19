@@ -1,13 +1,13 @@
 // Importação da biblioteca de estilos
 import { createGlobalStyle } from "styled-components";
 
-// Definição das cores de sistema 
+// Definição das cores de sistema
 export const cores = {
-    branco: '#FFFFFF',
-    laranja: '#E66767',
-    bege: '#FFEBD9',
-    fundo: '#FFF8F2'
-}
+  branco: "#FFFFFF",
+  laranja: "#E66767",
+  bege: "#FFEBD9",
+  fundo: "#FFF8F2",
+};
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -29,4 +29,4 @@ export const GlobalStyles = createGlobalStyle`
             max-width: 80%;
         }
     }
-`
+`;

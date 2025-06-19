@@ -1,31 +1,31 @@
 type Checkout = {
   products: [
     {
-      id: number
-      price: number
-    }
-  ]
+      id: number;
+      price: number;
+    },
+  ];
   delivery: {
-    receiver: string
+    receiver: string;
     address: {
-      descricao: string
-      city: string
-      zipcode: string
-      number: number
-      complement: string
-    }
-  }
+      descricao: string;
+      city: string;
+      zipcode: string;
+      number: number;
+      complement: string;
+    };
+  };
   payment: {
     card: {
-      name: string
-      number: string
-      code: number
+      name: string;
+      number: string;
+      code: number;
       expires: {
-        month: number
-        year: number
-      }
-    }
-  }
-}
+        month: number;
+        year: number;
+      };
+    };
+  };
+};
 
-export default Checkout
+export default Checkout;
